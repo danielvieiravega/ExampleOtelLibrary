@@ -61,6 +61,7 @@ public static class OpenTelemetryExtensions
             {
                 tracerProviderBuilder
                     .AddCustomProcessors()
+                    .AddAspNetCoreInstrumentation(x => x.RecordException = true)
                     .AddHttpClientInstrumentation(x => x.RecordException = true)
                     .AddGrpcClientInstrumentation()
                     .AddGrpcCoreInstrumentation()
